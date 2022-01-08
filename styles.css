@@ -28,3 +28,141 @@ header {
 h1 {
     font-size: clamp(2.8rem, 7vw, 3.5rem);
 }
+
+main {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.title p {
+    padding-top: 0.2em;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* SELECTIONS */
+.selections {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5em;
+}
+
+.selections button{
+    position: relative;
+    border-radius: 50%;
+    padding: 0 1em;
+    margin: 2.5em 0; 
+}
+
+@media all and (max-width: 30em) { 
+    .selections {
+        padding-bottom: 0;
+    }
+    .selections button {
+        padding: 0 0.5em;
+    }
+}
+
+button[data-selection='paper']{
+    margin: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+@media all and (max-width: 30em) { 
+    button[data-selection='paper']{ 
+        margin: 0;
+    }
+}
+
+.fas {
+    position: relative;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    border: 6px solid;
+    border-radius: 50%;
+    background-color: #f7feff;
+    padding: 0.5em;
+    box-shadow: inset 0px 0px 5px #040807;
+}
+
+.fa-hand-rock {
+    border-color: #B03A2E;
+    transform: rotate(60deg);
+}
+
+.fa-hand-paper {
+    border-color: #148F77; 
+}
+
+.fa-hand-scissors {
+    border-color: #F39C12; 
+    transform: rotate(10deg);
+}
+
+/* SCORE PANEL */
+.score_panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2.5em;
+    position: relative;
+}
+
+.player_score {
+    margin-right: 1em;
+}
+
+.computer_score {
+    margin-left: 1em;
+}
+
+/* PLAYER PANEL */
+.player_panel {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+   border-bottom: 1px solid #1f41bd;
+   border-top: 1px solid #1f41bd;
+}
+
+.computer {
+    margin-left: 1.5em;
+    border-bottom: 1px solid #1f41bd;
+    border-top: 1px solid #1f41bd;
+}
+
+/* SELECTION PANEL */
+.selection_panel {
+    display: none;
+}
+
+.choices_player, 
+.choices_computer {
+    background: transparent;
+    margin: 1em 3em;
+}
+
+@media all and (max-width: 30em) { 
+    .choices_player, 
+    .choices_computer { 
+        margin: 1em 1.5em;
+    }
+}
+
+.game_result {
+    padding-bottom: 2em;
+}
