@@ -4,14 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">   
+    <script src="https://kit.fontawesome.com/db70e90eac.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <h1>Rock Paper Scissors</h1>
     </header>
+
+    <main>
+        <div class="title">
+            <h2>Choose your move</h2>
+            <p>The game ends once one player reaches 5 points</p>
+        </div>
+        
+        <div class="selections">
+            <button data-selection="rock"><i class="fas fa-hand-rock"></i></button>
+            <button data-selection="paper"><i class="fas fa-hand-paper"></i></button>
+            <button data-selection="scissors"><i class="fas fa-hand-scissors"></i></button>
+        </div>
+
+        <div class="score_panel">
+            <div class="score">
+                <span class="player_score">0</span>
+                <span> : </span>
+                <span class="computer_score">0</span>
+            </div>
+            <div class="player_panel">
+                <span class="player">Your score</span>
+                <span class="computer">Computer</span>
+            </div>
+        </div>
+
+        <div class="selection_panel">
+            <div>
+                <button class="choices_player"></button>
+            </div>
+            <div>
+                <button class="choices_computer"></button>
+            </div>    
+        </div>
+
+        <div class="game_result">
+            <p></p>
+        </div>
+    </main>
 
     <script src="app.js"></script>
 </body>
