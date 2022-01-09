@@ -32,11 +32,40 @@ h1 {
 main {
     width: 100%;
     text-align: center;
+    display: none;
     position: relative;
 }
 
 .title p {
     padding-top: 0.2em;
+}
+
+.game_start {
+    margin-top: 5em;
+}
+
+.game_start button {
+    color: #f7feff;
+    font-size: clamp(1.6rem, 7vw, 1.9rem);
+    background: #1f41bd;
+    padding: 0.5em;
+    border-radius: 8px;
+    animation: 2s infinite both flash;
+}
+
+@keyframes flash {
+    0%, 100% {
+        background: #148F77;
+        box-shadow: 0px 2px 20px 4px #148F77;
+    }
+    50% {
+        background: #B03A2E;
+        box-shadow: 0px 2px 20px 4px #B03A2E;
+    }
+    75% {
+        background: #F39C12;
+        box-shadow: 0px 2px 20px 4px #F39C12;
+    }
 }
 
 button {
@@ -46,11 +75,9 @@ button {
     cursor: pointer;
 }
 
-/* SELECTIONS */
 .selections {
     display: flex;
     justify-content: center;
-    padding-bottom: 1.5em;
 }
 
 .selections button{
@@ -60,10 +87,7 @@ button {
     margin: 2.5em 0; 
 }
 
-@media all and (max-width: 30em) { 
-    .selections {
-        padding-bottom: 0;
-    }
+@media all and (max-width: 20em) { 
     .selections button {
         padding: 0 0.5em;
     }
@@ -85,6 +109,7 @@ button[data-selection='paper']{
     border: 6px solid;
     border-radius: 50%;
     background-color: #f7feff;
+    color: #000c0c;
     padding: 0.5em;
     box-shadow: inset 0px 0px 5px #040807;
 }
@@ -103,7 +128,6 @@ button[data-selection='paper']{
     transform: rotate(10deg);
 }
 
-/* SCORE PANEL */
 .score_panel {
     display: flex;
     justify-content: center;
@@ -114,21 +138,20 @@ button[data-selection='paper']{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size: 2.5em;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     position: relative;
 }
 
 .player_score {
-    margin-right: 1em;
+    margin-right: 1.3em;
 }
 
 .computer_score {
-    margin-left: 1em;
+    margin-left: 1.3em;
 }
 
-/* PLAYER PANEL */
 .player_panel {
-    font-size: 1.2em;
+    font-size: clamp(0.9rem, 5vw, 1.2rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +168,6 @@ button[data-selection='paper']{
     border-top: 1px solid #1f41bd;
 }
 
-/* SELECTION PANEL */
 .selection_panel {
     display: none;
 }
@@ -153,7 +175,7 @@ button[data-selection='paper']{
 .choices_player, 
 .choices_computer {
     background: transparent;
-    margin: 1em 3em;
+    margin: 1.5em 3em;
 }
 
 @media all and (max-width: 30em) { 
@@ -165,4 +187,66 @@ button[data-selection='paper']{
 
 .game_result {
     padding-bottom: 2em;
+}
+
+.result_panel {
+    width: 60%;
+    height: 95%;
+    position: absolute;
+    background: #1f41bd;
+    top: 0;
+    left: 20%;
+    display: none;
+    border-radius: 8px;
+    padding: 2em; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media all and (max-width: 60em) { 
+    .result_panel {
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+}
+
+.result_panel button {
+    margin: 0 auto;
+    background: #f7feff;
+    color: #000c0c;
+    font: bold clamp(1rem, 3vw, 1.3rem) 'Poppins', sans-serif;
+    box-shadow: inset 0px 0px 5px #040807;
+    border: 6px solid transparent;
+    padding: 0.7em;
+    border-radius: 8px;
+    animation: 2s infinite both flash-border;
+}
+
+@keyframes flash-border {
+    0%, 100% {
+        border-color: #148F77;
+        box-shadow: 0px 2px 20px 4px #148F77;
+    }
+    50% {
+        border-color: #B03A2E;
+        box-shadow: 0px 2px 20px 4px #B03A2E;
+    }
+    75% {
+        border-color: #F39C12;
+        box-shadow: 0px 2px 20px 4px #F39C12;
+    }
+}
+
+.result_panel p {
+    font-size: clamp(0.9rem, 5vw, 1.9rem);
+}
+
+.result_span {
+    display: block; 
+    padding: 0.5em 0.5em 1.5em 0.5em;
+}
+
+.score_span { 
+    font-size: clamp(2rem, 5vw, 2.4rem);
 }
