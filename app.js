@@ -8,6 +8,8 @@ const choicesPlayer = document.querySelector('.choices_player');
 const selectionPanel = document.querySelector('.selection_panel');
 const buttons = document.querySelectorAll('.selections button i');
 const randomButtons = ['rock', 'paper', 'scissors'];
+const gameStartBtn = document.querySelector('.game_start button');
+const main = document.querySelector('main');
 
 // button event listener 
 buttons.forEach(button => button.addEventListener('click', game));
@@ -69,4 +71,49 @@ function gameWinner(roundWinner, computerSelection, playerSelection) {
         choicesComputer.innerHTML = iconC;
     }
     selectionPanel.style.display = 'inline-flex';
+    finalWinner();
 }
+
+// announce game winner
+const resultPanel = document.querySelector('.result_panel');
+const restartBtn = document.querySelector('.result_panel button');
+const scoreSpan = document.querySelector('.result_panel p .score_span');
+const resultSpan = document.querySelector('.result_panel p .result_span');
+const scoreReset = document.querySelector('.score_panel');
+
+function finalWinner() {
+        for(let i = 0; i < 5; i++) {
+        if (computerScore < 5 && playerScore < 5) {
+            continue;
+        }
+        if(computerScore === 5 || playerScore === 5) {
+            resultPanel.style.display = 'inline-flex';
+            scoreSpan.textContent += `${playerScore} - ${computerScore}`;
+            if(playerScore > computerScore) {
+                resultSpan.textContent += ` You Won, Congratulations! 🚀 `;
+            } else {
+                resultSpan.textContent += ` You Lost, Try again! 💫 `;
+            }
+            break;
+        }
+    }
+}
+
+// restart button  
+restartBtn.addEventListener('click', () => {
+    resultPanel.style.display = 'none'; 
+    resultSpan.textContent = ""; // clear the result panel text
+    scoreSpan.textContent = ""; // clear the result panel score
+    playerScore = 0; // start the score 
+    computerScore = 0; // start the score 
+    playerScore_span.textContent = '0'; // reset the score
+    computerScore_span.textContent = '0'; // reset the score 
+    gameResult.textContent = ""; // clear the result text
+    selectionPanel.style.display = 'none'; // clear the choosen move
+})
+
+// start the game button
+gameStartBtn.addEventListener('click', () => {
+    main.style.display = 'block';
+    gameStartBtn.parentElement.style.display = 'none';
+})
