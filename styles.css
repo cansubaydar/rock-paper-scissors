@@ -87,7 +87,7 @@ button {
     margin: 2.5em 0; 
 }
 
-@media all and (max-width: 20em) { 
+@media screen and (max-width: 20em) { 
     .selections button {
         padding: 0 0.5em;
     }
@@ -97,7 +97,7 @@ button[data-selection='paper']{
     margin: 0 clamp(1rem, 3vw, 2.5rem);
 }
 
-@media all and (max-width: 30em) { 
+@media screen and (max-width: 30em) { 
     button[data-selection='paper']{ 
         margin: 0;
     }
@@ -178,7 +178,7 @@ button[data-selection='paper']{
     margin: 1.5em 3em;
 }
 
-@media all and (max-width: 30em) { 
+@media screen and (max-width: 30em) { 
     .choices_player, 
     .choices_computer { 
         margin: 1em 1.5em;
@@ -203,7 +203,7 @@ button[data-selection='paper']{
     justify-content: center;
 }
 
-@media all and (max-width: 60em) { 
+@media screen and (max-width: 60em) { 
     .result_panel {
         width: 100%;
         height: 100%;
